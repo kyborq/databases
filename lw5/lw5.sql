@@ -117,7 +117,7 @@ FROM `room_in_booking`
   LEFT JOIN `room_in_booking` `r_booking` ON `r_booking`.`id_room` = `room_in_booking`.`id_room`
     AND NOT `r_booking`.`id_room_in_booking` = `room_in_booking`.`id_room_in_booking`
 WHERE `room_in_booking`.`checkout_date` > `r_booking`.`checkin_date`
-  AND `room_in_booking`.`checkin_date` < `r_booking`.`checkin_date`;
+  AND `room_in_booking`.`checkin_date` < `r_booking`.`checkout_date`;
 
 SELECT *
 FROM `room_in_booking`;
