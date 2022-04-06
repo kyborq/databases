@@ -18,12 +18,12 @@ SELECT
   `pharmacy`.`name` AS `pharmacy`
 FROM `order`
   LEFT JOIN `production` ON `production`.`id_production` = `order`.`id_production`
-  LEFT JOIN `medicine` ON `medicine`.`id_medicine` = `production`.`id_medicine`
+  LEFT JOIN `medicine` ON `medicine`.`id_medicine` = `production`.`id_medicine` -- ? начинать с лекарств
   LEFT JOIN `pharmacy` ON `pharmacy`.`id_pharmacy` = `order`.`id_pharmacy`
   LEFT JOIN `company` ON `company`.`id_company` = `production`.`id_company`
 WHERE `company`.`name` = "Фарма"
 GROUP BY `medicine` 
-  HAVING MIN(`date`) > "2019-01-25";
+  HAVING MIN(`date`) > "2019-01-25"; -- or is null
 
 -- 4. Дать минимальный и максимальный баллы лекарств каждой фирмы, которая оформила не менее 120 заказов
 SELECT 
