@@ -47,7 +47,7 @@ DELIMITER ;
 CALL get_debtors(3);
 
 -- 4. Дать среднюю оценку студентов по каждому предмету для тех предметов, 
---    по которым занимаетсяне менее 35 студентов
+--    по которым занимается не менее 35 студентов
 -- подумоть еще
 SELECT 
   `student`.`name` AS `student`,
@@ -57,7 +57,7 @@ FROM `mark`
   LEFT JOIN `student` ON `student`.`id_student` = `mark`.`id_student`
   LEFT JOIN `lesson` ON `lesson`.`id_lesson` = `mark`.`id_lesson`
   LEFT JOIN `subject` ON `subject`.`id_subject` = `lesson`.`id_subject`
-GROUP BY `subject`.`id_subject`
+GROUP BY `lesson`.`id_subject`
   HAVING COUNT(`student`.`id_student`) >= 35;
 
 -- 5. Дать оценки студентов специальности ВМ по всем проводимым предметам с указанием группы, фамилии, предмета, даты. 

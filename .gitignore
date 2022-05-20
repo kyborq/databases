@@ -1,4 +1,6 @@
+node_modules
 _research
 _labs
 _lectures
 desktop.ini
+package-lock.json
