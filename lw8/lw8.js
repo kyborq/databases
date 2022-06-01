@@ -155,7 +155,10 @@ MongoClient.connect(url, config, (err, client) => {
 
   // Поиск по значению в массиве
   db.publishing.find({
-    emails: { $elemMatch:  "topizdat@mail.ru"  },
+    emails: "topizdat@mail.ru",
+  });
+  db.publishing.find({
+    emails: { $in: ["topizdat@mail.ru"] },
   });
 
   // Поиск по количеству элементов в массиве
