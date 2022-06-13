@@ -1,3 +1,11 @@
+-- 1. Индексы
+CREATE INDEX IN_group_id   ON `group`  (`id_group`);
+CREATE INDEX IN_subject_id ON `subject`(`id_subject`);
+CREATE INDEX IN_teacher_id ON `teacher`(`id_teacher`);
+CREATE INDEX IN_student_id ON `student`(`id_student`);
+CREATE INDEX IN_lesson_id  ON `lesson` (`id_lesson`);
+CREATE INDEX IN_mark_id    ON `mark`   (`id_mark`);
+
 -- 2. Выдать оценки студентов по информатике если они обучаются данному предмету. 
 --    Оформить выдачу данных с использованием view
 CREATE OR REPLACE VIEW `students_rating` AS

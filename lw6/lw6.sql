@@ -1,3 +1,11 @@
+-- 1. Индексы
+CREATE INDEX IN_company_id    ON `company`   (`id_company`);
+CREATE INDEX IN_dealer_id     ON `dealer`    (`id_dealer`);
+CREATE INDEX IN_medicine_id   ON `medicine`  (`id_medicine`);
+CREATE INDEX IN_pharmacy_id   ON `pharmacy`  (`id_pharmacy`);
+CREATE INDEX IN_production_id ON `production`(`id_production`);
+CREATE INDEX IN_order_id      ON `order`     (`id_order`);
+
 -- 2. Выдать информацию по всем заказам лекарства “Кордерон” компании “Аргус” с указанием названий аптек, дат, объема заказов
 SELECT 
   `pharmacy`.`name` AS `name`, 
